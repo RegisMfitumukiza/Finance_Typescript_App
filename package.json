@@ -1,0 +1,14 @@
+{
+  "name": "finance_app",
+  "version": "1.0.0",
+  "description": "Vanilla TypeScript Finance App",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
