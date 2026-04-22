@@ -176,6 +176,12 @@ function attachAuthFormHandlers(): void {
   registerForm?.addEventListener("submit", handleRegisterSubmit);
 }
 
+function attachAuthCustomEvents(): void {
+  document.addEventListener("auth:switch-to-login", () => {
+    renderLoginView();
+  });
+}
+
 export function renderAuthView(view: AuthView): void {
   const container = getAuthContainer();
 
@@ -197,3 +203,5 @@ export function renderLoginView(): void {
 export function renderRegisterView(): void {
   renderAuthView("register");
 }
+
+attachAuthCustomEvents();

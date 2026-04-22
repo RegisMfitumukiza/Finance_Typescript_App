@@ -59,4 +59,8 @@ export const handleRegisterSubmit = (event: Event): void => {
   form.reset();
 
   showToast("Registration successful. You can now log in.", "success");
+
+  window.setTimeout(() => {
+    document.dispatchEvent(new CustomEvent("auth:switch-to-login"));
+  }, 1200);
 };

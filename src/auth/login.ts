@@ -35,7 +35,12 @@ export const handleLoginSubmit = (event: Event): void => {
 
   const user = findUserByEmail(email);
 
-  if (!user || user.password !== password) {
+  if (!user) {
+    showToast("User does not exist", "error");
+    return;
+  }
+
+  if (user.password !== password) {
     showToast("Invalid email or password", "error");
     return;
   }
