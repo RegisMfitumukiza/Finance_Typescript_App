@@ -484,6 +484,7 @@ button {
     background-color: transparent;
     border-left: none;
     padding-left: 0.8rem;
+    color: var(--text-light);
   }
 
   .dashboard--collapsed .sidebar__link--active .sidebar__icon {
