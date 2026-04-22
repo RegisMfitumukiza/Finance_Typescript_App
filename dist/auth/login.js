@@ -25,12 +25,19 @@ export const handleLoginSubmit = (event) => {
         return;
     }
     const user = findUserByEmail(email);
-    if (!user || user.password !== password) {
+    if (!user) {
+        showToast("User does not exist", "error");
+        return;
+    }
+    if (user.password !== password) {
         showToast("Invalid email or password", "error");
         return;
     }
     setCurrentUser(user);
     form.reset();
     showToast("Login successful", "success");
+    window.setTimeout(() => {
+        window.location.href = "./dashboard.html";
+    }, 1000);
 };
 //# sourceMappingURL=login.js.map

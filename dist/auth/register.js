@@ -45,5 +45,8 @@ export const handleRegisterSubmit = (event) => {
     addUser(newUser);
     form.reset();
     showToast("Registration successful. You can now log in.", "success");
+    window.setTimeout(() => {
+        document.dispatchEvent(new CustomEvent("auth:switch-to-login"));
+    }, 1200);
 };
 //# sourceMappingURL=register.js.map

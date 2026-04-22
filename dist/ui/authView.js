@@ -154,6 +154,11 @@ function attachAuthFormHandlers() {
     loginForm === null || loginForm === void 0 ? void 0 : loginForm.addEventListener("submit", handleLoginSubmit);
     registerForm === null || registerForm === void 0 ? void 0 : registerForm.addEventListener("submit", handleRegisterSubmit);
 }
+function attachAuthCustomEvents() {
+    document.addEventListener("auth:switch-to-login", () => {
+        renderLoginView();
+    });
+}
 export function renderAuthView(view) {
     const container = getAuthContainer();
     if (view === "login") {
@@ -172,4 +177,5 @@ export function renderLoginView() {
 export function renderRegisterView() {
     renderAuthView("register");
 }
+attachAuthCustomEvents();
 //# sourceMappingURL=authView.js.map
