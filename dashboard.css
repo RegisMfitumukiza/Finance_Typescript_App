@@ -378,7 +378,15 @@ button {
             gap 0.3s ease;
     }
 
-    .sidebar__link:hover,
+    .sidebar__link:hover {
+        background-color: var(--white);
+        color: var(--text-main);
+    }
+
+    .sidebar__link:hover .sidebar__icon {
+        color: var(--accent);
+    }
+
     .sidebar__minimize:hover {
         color: var(--white);
     }
