@@ -1,175 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finance Dashboard</title>
-    <link rel="stylesheet" href="/dashboard.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="/dashboard.css" />
 </head>
 
 <body>
-    <div class="dashboard">
-        <aside class="sidebar">
-            <div>
-                <div class="sidebar__brand">finance</div>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div>
+        <a href="#" id="sidebar-brand" class="sidebar__brand">finance</a>
 
-                <nav class="sidebar__nav">
-                    <a href="#" class="sidebar__link sidebar__link--active">
-                        <span class="sidebar__icon">⌂</span>
-                        <span class="sidebar__text">Overview</span>
-                    </a>
+        <nav class="sidebar__nav">
+          <a href="#" class="sidebar__link sidebar__link--active" data-section="overview">
+            <span class="sidebar__icon">⌂</span>
+            <span class="sidebar__text">Overview</span>
+          </a>
 
-                    <a href="#" class="sidebar__link">
-                        <span class="sidebar__icon">⇅</span>
-                        <span class="sidebar__text">Transactions</span>
-                    </a>
+          <a href="#" class="sidebar__link" data-section="transactions">
+            <span class="sidebar__icon">↕</span>
+            <span class="sidebar__text">Transactions</span>
+          </a>
 
-                    <a href="#" class="sidebar__link">
-                        <span class="sidebar__icon">◔</span>
-                        <span class="sidebar__text">Budgets</span>
-                    </a>
+          <a href="#" class="sidebar__link" data-section="budgets">
+            <span class="sidebar__icon">◒</span>
+            <span class="sidebar__text">Budgets</span>
+          </a>
 
-                    <a href="#" class="sidebar__link">
-                        <span class="sidebar__icon">💰</span>
-                        <span class="sidebar__text">Pots</span>
-                    </a>
+          <a href="#" class="sidebar__link" data-section="pots">
+            <span class="sidebar__icon">💰</span>
+            <span class="sidebar__text">Pots</span>
+          </a>
 
-                    <a href="#" class="sidebar__link">
-                        <span class="sidebar__icon">▤</span>
-                        <span class="sidebar__text">Recurring bills</span>
-                    </a>
-                </nav>
+          <a href="#" class="sidebar__link" data-section="bills">
+            <span class="sidebar__icon">▣</span>
+            <span class="sidebar__text">Recurring bills</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar__bottom">
+        <button id="sidebar-toggle" class="sidebar__minimize" type="button">
+          <span class="sidebar__icon">◀</span>
+          <span class="sidebar__text">Minimize Menu</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1 class="dashboard-title">Overview</h1>
+
+        <button id="logout-button" class="logout-button" type="button">
+          <span class="logout-button__icon">⇥</span>
+          <span>Logout</span>
+        </button>
+      </header>
+
+      <section class="summary-grid">
+        <article class="summary-card summary-card--dark">
+          <p class="summary-card__label">Current Balance</p>
+          <h2 class="summary-card__amount">$0.00</h2>
+        </article>
+
+        <article class="summary-card">
+          <p class="summary-card__label">Income</p>
+          <h2 class="summary-card__amount">$0.00</h2>
+        </article>
+
+        <article class="summary-card">
+          <p class="summary-card__label">Expenses</p>
+          <h2 class="summary-card__amount">$0.00</h2>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <div class="content-column">
+          <article class="section-card section-card--medium">
+            <div class="section-card__header">
+              <h2 class="section-card__title">Pots</h2>
+              <a href="#" class="section-card__link js-see-details" data-section="pots">
+                See Details <span>›</span>
+              </a>
             </div>
 
-            <button id="sidebar-toggle" class="sidebar__minimize" type="button">
-                <span class="sidebar__icon">◀</span>
-                <span class="sidebar__text">Minimize Menu</span>
-            </button>
-        </aside>
-
-        <main class="dashboard-main">
-            <header class="dashboard-header">
-                <h1 class="dashboard-title">Overview</h1>
-
-                <button id="logout-button" class="logout-button" type="button">
-                    <span class="logout-button__icon">⇥</span>
-                    <span>Logout</span>
-                </button>
-            </header>
-
-            <section class="summary-grid">
-                <article class="summary-card summary-card--dark">
-                    <p class="summary-card__label">Current Balance</p>
-                    <h2 class="summary-card__amount">$0.00</h2>
-                </article>
-
-                <article class="summary-card">
-                    <p class="summary-card__label">Income</p>
-                    <h2 class="summary-card__amount">$0.00</h2>
-                </article>
-
-                <article class="summary-card">
-                    <p class="summary-card__label">Expenses</p>
-                    <h2 class="summary-card__amount">$0.00</h2>
-                </article>
-            </section>
-
-            <section class="content-grid">
-                <div class="content-column">
-                    <article class="section-card section-card--medium">
-                        <div class="section-card__header">
-                            <h2 class="section-card__title">Pots</h2>
-                            <a href="#" class="section-card__link">See Details <span>›</span></a>
-                        </div>
-
-                        <div class="pots-preview">
-                            <div class="pots-preview__box">
-                                <div class="pots-preview__icon">💰</div>
-                                <div>
-                                    <p class="pots-preview__label">Pots</p>
-                                    <h3 class="pots-preview__amount">$0</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="section-card section-card--medium">
-                        <div class="section-card__header">
-                            <h2 class="section-card__title">Transactions</h2>
-                            <a href="#" class="section-card__link">See Details <span>›</span></a>
-                        </div>
-
-                        <p class="empty-state">No Data Provided</p>
-                    </article>
+            <div class="pots-preview">
+              <div class="pots-preview__box">
+                <div class="pots-preview__icon">💰</div>
+                <div>
+                  <p class="pots-preview__label">Pots</p>
+                  <h3 class="pots-preview__amount">$0</h3>
                 </div>
+              </div>
+            </div>
+          </article>
 
-                <div class="content-column">
-                    <article class="section-card section-card--budgets">
-                        <div class="section-card__header">
-                            <h2 class="section-card__title">Budgets</h2>
-                            <a href="#" class="section-card__link">See Details <span>›</span></a>
-                        </div>
+          <article class="section-card section-card--medium">
+            <div class="section-card__header">
+              <h2 class="section-card__title">Transactions</h2>
+              <a href="#" class="section-card__link js-see-details" data-section="transactions">
+                See Details <span>›</span>
+              </a>
+            </div>
 
-                        <p class="empty-state">No Data Provided.</p>
-                    </article>
+            <p class="empty-state">No Data Provided</p>
+          </article>
+        </div>
 
-                    <article class="section-card">
-                        <div class="section-card__header">
-                            <h2 class="section-card__title">Recurring Bills</h2>
-                            <a href="#" class="section-card__link">See Details <span>›</span></a>
-                        </div>
+        <div class="content-column">
+          <article class="section-card section-card--budgets">
+            <div class="section-card__header">
+              <h2 class="section-card__title">Budgets</h2>
+              <a href="#" class="section-card__link js-see-details" data-section="budgets">
+                See Details <span>›</span>
+              </a>
+            </div>
 
-                        <div class="bills-list">
-                            <div class="bill-row bill-row--paid">
-                                <span>Paid Bills</span>
-                                <strong>$0.00</strong>
-                            </div>
+            <p class="empty-state">No Data Provided.</p>
+          </article>
 
-                            <div class="bill-row bill-row--upcoming">
-                                <span>Total Upcoming</span>
-                                <strong>$0.00</strong>
-                            </div>
+          <article class="section-card">
+            <div class="section-card__header">
+              <h2 class="section-card__title">Recurring Bills</h2>
+              <a href="#" class="section-card__link js-see-details" data-section="bills">
+                See Details <span>›</span>
+              </a>
+            </div>
 
-                            <div class="bill-row bill-row--due">
-                                <span>Due Soon</span>
-                                <strong>$0.00</strong>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-    </div>
+            <div class="bills-list">
+              <div class="bill-row bill-row--paid">
+                <span>Paid Bills</span>
+                <strong>$0.00</strong>
+              </div>
 
-    <nav class="mobile-nav">
-        <a href="#" class="mobile-nav__link mobile-nav__link--active">
-            <span class="mobile-nav__icon">⌂</span>
-            <span class="mobile-nav__text">Overview</span>
-        </a>
+              <div class="bill-row bill-row--upcoming">
+                <span>Total Upcoming</span>
+                <strong>$0.00</strong>
+              </div>
 
-        <a href="#" class="mobile-nav__link">
-            <span class="mobile-nav__icon">⇅</span>
-            <span class="mobile-nav__text">Transactions</span>
-        </a>
+              <div class="bill-row bill-row--due">
+                <span>Due Soon</span>
+                <strong>$0.00</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
 
-        <a href="#" class="mobile-nav__link">
-            <span class="mobile-nav__icon">◔</span>
-            <span class="mobile-nav__text">Budgets</span>
-        </a>
+  <nav class="mobile-nav">
+    <a href="#" class="mobile-nav__link mobile-nav__link--active" data-section="overview">
+      <span class="mobile-nav__icon">⌂</span>
+      <span class="mobile-nav__text">Overview</span>
+    </a>
 
-        <a href="#" class="mobile-nav__link">
-            <span class="mobile-nav__icon">💰</span>
-            <span class="mobile-nav__text">Pots</span>
-        </a>
+    <a href="#" class="mobile-nav__link" data-section="transactions">
+      <span class="mobile-nav__icon">⇅</span>
+      <span class="mobile-nav__text">Transactions</span>
+    </a>
 
-        <a href="#" class="mobile-nav__link">
-            <span class="mobile-nav__icon">▤</span>
-            <span class="mobile-nav__text">Bills</span>
-        </a>
-    </nav>
+    <a href="#" class="mobile-nav__link" data-section="budgets">
+      <span class="mobile-nav__icon">◒</span>
+      <span class="mobile-nav__text">Budgets</span>
+    </a>
 
-    <script type="module" src="/dist/dashboard.js"></script>
+    <a href="#" class="mobile-nav__link" data-section="pots">
+      <span class="mobile-nav__icon">💰</span>
+      <span class="mobile-nav__text">Pots</span>
+    </a>
+
+    <a href="#" class="mobile-nav__link" data-section="bills">
+      <span class="mobile-nav__icon">▤</span>
+      <span class="mobile-nav__text">Bills</span>
+    </a>
+  </nav>
+
+  <script type="module" src="/dist/dashboard.js"></script>
 </body>
-
 </html>
